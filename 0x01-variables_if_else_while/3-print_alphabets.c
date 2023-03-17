@@ -11,20 +11,21 @@
 
 int main(void)
 {
-        char c;
+	char c;
 
-        for (c = 'a'; c <= 'z'; c++)
+	for (c = 'a'; c <= 'z'; c++)
         {
-                putchar(c);
+		putchar(c);
 	}
 
 	for (c = 'A'; c <= 'Z'; c++)
 	{
 		putchar(c);
+
 	}
 
-        putchar('\n');
+	putchar('\n');
 
-        return (0);
+	return (0);
 
 }
