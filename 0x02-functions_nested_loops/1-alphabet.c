@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -6,18 +5,17 @@
  *
  * Description: prints lowercase alphabets
  *
- * Return: 0 (success)
+ * Return: void (success)
  */
 
 void print_alphabet(void)
 {
 	int n;
 
-	for (n = ; n <= 'z'; n++)
+	for (n = 'a'; n <= 'z'; n++)
 	{
 		putchar(n);
 	}
 	putchar('\n');
 
-	return (0);
 }
