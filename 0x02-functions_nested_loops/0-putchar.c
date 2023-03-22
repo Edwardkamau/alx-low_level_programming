@@ -1,30 +1,13 @@
-#include <stdio.h>
+#include <unistd.h>
 
 /**
- * main - Entry point
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
  *
- * Description: prints _putchar
- *
- * Return: Always 0 (Success)
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-
-#define MAXSTRING 80
-
-int main(void)
+int _putchar(char c)
 {
-	char message[] = "_putchar";
-
-	for (int n = 0; n < MAXSTRING; n++)
-	{
-	if (message[n] == '\0')
-	{
-
-	putchar('\n');
-	break;
-	}
-	else
-	putchar(message[n]);
-	}
-
-	return (0);
+	return (write(1, &c, 1));
 }
