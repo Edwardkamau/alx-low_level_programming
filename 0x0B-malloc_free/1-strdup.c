@@ -13,8 +13,7 @@
 char *_strdup(char *str)
 {
 	char *strDup;
-	int i;
-	int j;
+	int i, j;
 
 	if (str == NULL)
 	{
@@ -23,17 +22,16 @@ char *_strdup(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		strDup = malloc(sizeof(*str) * i);
 		i++;
 	}
+	
+	strDup = malloc(sizeof(*str) * i);
 
 	j = 0;
-
 	while (str[j] != '\0')
 	{
 		strDup[j] = str[j];
 		j++;
 	}
-
 	return (strDup);
 }
