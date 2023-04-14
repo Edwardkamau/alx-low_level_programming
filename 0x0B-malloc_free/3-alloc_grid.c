@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <stdio.h>
-
+#include <stddef.h>
 /**
  *alloc_grid - returns a pointer to two dimensional array
  *
@@ -16,27 +16,23 @@ int **alloc_grid(int width, int height)
 {
 	int h;
 	int w;
-	int k;
-	int **allocgrid = malloc(sizeof(*allocgrid) * height);
+	int **allocgrid;
 
 	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
+	allocgrid = malloc(sizeof(int *) * height);
 	if (allocgrid == NULL)
 	{
-		free(allocgrid);
 		return (NULL);
 	}
 	for (h = 0; h < height; h++)
 	{
-		allocgrid[h] = malloc(width * sizeof(*allocgrid[h]));
+		allocgrid[h] = malloc(sizeof(int) * width);
 		if (allocgrid[h] == NULL)
 		{
-			for (k = 0; k < h; k++)
-			{
-				free(allocgrid[k]);
-			}
+			return (NULL);
 		}
 		for (w = 0; w < width; w++)
 		{
