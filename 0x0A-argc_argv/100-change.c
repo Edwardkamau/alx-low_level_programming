@@ -16,14 +16,10 @@ int main(int argc, char *argv[])
 	int cents;
 	int coins = 0;
 
-	if (argc > 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
-	}
-	if (atoi(argv[1]) <= 0)
-	{
-		printf("0\n");
 	}
 	cents = atoi(argv[1]);
 	while (cents > 0)
