@@ -1,3 +1,6 @@
+#ifndef __DOUBLEGUARD
+#define __DOUBLEGUARD
+
 /**
  * struct dog - structure of three members
  *
@@ -13,3 +16,5 @@ struct dog
 	float age;
 	char *owner;
 };
+
+#endif
