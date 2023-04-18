@@ -29,5 +29,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		*(p + i) = 0;
 		i++;
 	}
+	free(p);
 	return ((void *)p);
 }
