@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <string.h>
+
 /**
  * _calloc - allocates memory for an array of nmemb elements of size bytes
  *
@@ -29,6 +31,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		*(p + i) = 0;
 		i++;
 	}
-	free(p);
+	memset(p, 0, nmemb * size);
 	return ((void *)p);
 }
