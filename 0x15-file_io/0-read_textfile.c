@@ -38,8 +38,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	return (letters_read);
 
-KILL: free(buffer);
-      close(fd);
-      return (0);
+KILL:	free(buffer);
+	close(fd);
+	return (0);
 }
 
