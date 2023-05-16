@@ -15,20 +15,23 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd, write_bytes;
-	char *buffer;
 
 	if (!filename)
 		return (-1);
-	fd = open(filename, O_RDWR || O_APPEND);
+	fd = open(filename, O_WRONLY || O_APPEND);
 	if (fd == -1)
 		return (-1);
-	buffer = malloc(sizeof(char) * slen(text_content));
 	if (!text_content)
+	{
+		close(fd);
 		return (1);
-	write_bytes = write(fd, buffer, slen(text_content));
-	if (!write_bytes)
+	}
+	write_bytes = write(fd, text_content, slen(text_content));
+	if (!write_bytes || write_bytes != slen(text_content))
+	{
+		close(fd);
 		return (-1);
-	free(buffer);
+	}
 	close(fd);
 
 	return (1);
