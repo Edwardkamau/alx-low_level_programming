@@ -38,11 +38,6 @@ int main(int argc, char *argv[])
 		free(buffer);
 		exit(99);
 	}
-	if (content_read != content_written)
-	{
-		free(buffer);
-		exit(99);
-	}
 	free(buffer);
 	if (close(fd) == -1)
 	{
