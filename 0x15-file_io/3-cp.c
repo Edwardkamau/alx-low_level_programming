@@ -6,7 +6,7 @@
  * main - entry point
  *
  * @argc: count of arguments
- * @argv[]: elements of arguments
+ * @argv: elements of arguments
  *
  * Return: always 0 (Success)
  */
@@ -38,7 +38,18 @@ int main(int argc, char *argv[])
 		free(buffer);
 		exit(99);
 	}
-	close(fd);
-	close(file_to);
+	free(buffer);
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		perror("close fd error");
+		exit(100);
+	}
+	if (close(file_to) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close file_to %d\n", file_to);
+		perror("close file_to");
+		exit(100);
+	}
 	return (0);
 }
