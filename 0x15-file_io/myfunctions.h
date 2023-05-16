@@ -2,6 +2,9 @@
 #define _FILE_H
 
 #include "main.h"
+#include <unistd.h>
+# include <stdio.h>
+
 /**
  * slen - the length of the string
  * @s: the string

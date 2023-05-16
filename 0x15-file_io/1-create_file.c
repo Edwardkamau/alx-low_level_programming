@@ -1,7 +1,5 @@
 #include <unistd.h>
 #include <fcntl.h>
-#include <stdlib.h>
-#include "main.h"
 #include "myfunctions.h"
 
 /**
@@ -17,7 +15,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd, letters_written;
 
-	if (filename == NULL)
+	if (!filename)
 		return (-1);
 	fd = open(filename, O_CREAT || O_WRONLY || O_TRUNC, 0600);
 	if (fd == -1)
@@ -34,5 +32,5 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	}
 	close(fd);
-	return (-1);
+	return (1);
 }
